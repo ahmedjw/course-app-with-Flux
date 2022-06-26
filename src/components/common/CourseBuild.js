@@ -4,13 +4,25 @@ import { createCourse, getCourses } from "../../api/courseApi";
 import FormInput from "../shared/FormInput";
 import FormSelect from "../shared/FormSelect";
 import { useNavigate } from "react-router-dom";
+import * as yup from "yup";
 
+let schema = yup.object().shape({
+  title: yup
+    .string()
+    .required()
+    .min(2, "the title is to small"),
+  category: yup
+    .string()
+    .required()
+    .min(2, "the title is to small"),
+});
 export default function CourseBuild() {
   const [length, setLength] = useState(0);
   const Navigate = useNavigate();
   useEffect(() => {
     getCourses().then((data) => setLength(data.length + 1));
   }, []);
+
   return (
     <Formik
       initialValues={{
@@ -25,6 +37,7 @@ export default function CourseBuild() {
         createCourse(values);
         Navigate("/courses");
       }}
+      validationSchema={schema}
     >
       {(props) => (
         <Form className="row g-3">
