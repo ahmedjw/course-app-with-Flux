@@ -10,5 +10,8 @@ export const getCourseBySlug = async (slug) => {
   return data[0];
 };
 export const deleteCourse = async (courseId) => {
-  axios.delete(baseUrl + courseId);
+  await axios.delete(baseUrl + courseId);
+};
+export const createCourse = async (CourseData) => {
+  await axios.post(baseUrl, CourseData);
 };

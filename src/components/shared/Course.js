@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { deleteCourse } from "../../api/courseApi";
 
 export default function Course({ info }) {
   return (
@@ -9,6 +10,14 @@ export default function Course({ info }) {
       </td>
       <td>{info.authorId}</td>
       <td>{info.category}</td>
+      <td>
+        <button
+          className="btn btn-primary"
+          onClick={() => deleteCourse(info.id)}
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   );
 }

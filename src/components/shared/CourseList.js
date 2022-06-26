@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Course from "../shared/Course";
+import Course from "./Course";
 
 function CourseList({ courses }) {
   return (
