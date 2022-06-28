@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { getCourses } from "../../api/courseApi";
+import { gitCourses } from "../../actions/CourseActions";
+import Store from "../../sotres/store";
 import CourseList from "../shared/CourseList";
 
 function CoursesPage() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    getCourses().then((_courses) => setCourses(_courses));
+    gitCourses();
+    setCourses(Store.gitCourses());
   }, []);
 
   return (

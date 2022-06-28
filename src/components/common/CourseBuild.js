@@ -1,10 +1,12 @@
 import { Formik, Form } from "formik";
 import React, { useEffect, useState } from "react";
-import { createCourse, getCourses } from "../../api/courseApi";
+import { getCourses } from "../../api/courseApi";
 import FormInput from "../shared/FormInput";
 import FormSelect from "../shared/FormSelect";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
+import { createCourse } from "../../actions/CourseActions";
+import Store from "../../sotres/store";
 
 let schema = yup.object().shape({
   title: yup
@@ -20,7 +22,10 @@ export default function CourseBuild() {
   const [length, setLength] = useState(0);
   const Navigate = useNavigate();
   useEffect(() => {
-    getCourses().then((data) => setLength(data.length + 1));
+    getCourses().then((data) => {
+      setLength(Store.length);
+      console.log(Store.length);
+    });
   }, []);
 
   return (

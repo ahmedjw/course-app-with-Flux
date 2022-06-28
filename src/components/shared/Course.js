@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { deleteCourse } from "../../api/courseApi";
+import { useNavigate } from "react-router-dom";
+import { deleteCourse } from "../../actions/CourseActions";
 
 export default function Course({ info }) {
+  const navigate = useNavigate();
   return (
     <tr key={info.id}>
       <td>
@@ -13,7 +15,9 @@ export default function Course({ info }) {
       <td>
         <button
           className="btn btn-primary"
-          onClick={() => deleteCourse(info.id)}
+          onClick={() => {
+            deleteCourse(info.id);
+          }}
         >
           Delete
         </button>

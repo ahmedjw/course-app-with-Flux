@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { getCourseBySlug } from "../api/courseApi";
+import Store from "../sotres/store";
 
 export default function getCourseDetails({ course }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState("");
   const [isError, setIsError] = useState(false);
-  const GetData = () => getCourseBySlug(course).then((res) => setData(res));
+
   useEffect(() => {
     try {
-      GetData();
+      setData(Store.getCourseBySlug(course));
       setIsLoading(false);
     } catch (e) {
       setErr(e);
