@@ -4,7 +4,7 @@ import { dispatcher } from "../StoreDispatcher";
 let Courses = [];
 const CHANGE_EVENT = "change";
 class CourseSotre extends EventEmitter {
-  createEventListener(callback) {
+  addEventListener(callback) {
     this.on(CHANGE_EVENT, callback);
   }
   removeEventListener() {
@@ -22,13 +22,16 @@ class CourseSotre extends EventEmitter {
   DeleteCourse(id) {
     Courses = Courses.filter((item) => item.id !== id);
   }
+  addToStore(course) {
+    Courses.push();
+  }
 }
 const Store = new CourseSotre();
 export default Store;
 dispatcher.register((action) => {
   switch (action.actionType) {
     case actionTypes.CREATE_COURSE:
-      Courses.push(action.course);
+      Store.addToStore(action.course);
       Store.emitChange();
       break;
     case actionTypes.GET_COURSES:

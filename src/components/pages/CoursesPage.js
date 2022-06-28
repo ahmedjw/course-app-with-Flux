@@ -5,13 +5,15 @@ import Store from "../../sotres/store";
 import CourseList from "../shared/CourseList";
 
 function CoursesPage() {
-  const [courses, setCourses] = useState([]);
+  const [courses, setCourses] = useState(Store.gitCourses());
 
   useEffect(() => {
+    Store.addEventListener(onChange);
     gitCourses();
-    setCourses(Store.gitCourses());
   }, []);
-
+  const onChange = () => {
+    setCourses(Store.gitCourses());
+  };
   return (
     <>
       <h2>Courses</h2>

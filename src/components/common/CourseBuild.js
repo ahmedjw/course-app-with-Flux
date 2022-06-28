@@ -5,8 +5,9 @@ import FormInput from "../shared/FormInput";
 import FormSelect from "../shared/FormSelect";
 import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
-import { createCourse } from "../../actions/CourseActions";
 import Store from "../../sotres/store";
+import { createCourse } from "../../actions/CourseActions";
+import { dispatcher } from "../../StoreDispatcher";
 
 let schema = yup.object().shape({
   title: yup
@@ -23,8 +24,7 @@ export default function CourseBuild() {
   const Navigate = useNavigate();
   useEffect(() => {
     getCourses().then((data) => {
-      setLength(Store.length);
-      console.log(Store.length);
+      setLength(data.length);
     });
   }, []);
 

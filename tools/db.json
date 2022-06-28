@@ -1,46 +1,44 @@
 {
   "courses": [
     {
-      "id": 1,
-      "title": "Securing React Apps with Auth0",
-      "slug": "react-auth0-authentication-security",
-      "authorId": 1,
-      "category": "JavaScript"
-    },
-    {
       "id": 2,
-      "title": "React: The Big Picture",
-      "slug": "react-big-picture",
-      "authorId": 1,
-      "category": "JavaScript"
+      "title": "feafefa",
+      "slug": "feafefa",
+      "authorId": "1",
+      "category": "aefefaf",
+      "createdAt": 1656428348913
     },
     {
       "id": 3,
-      "title": "Creating Reusable React Components",
-      "slug": "react-creating-reusable-components",
-      "authorId": 1,
-      "category": "JavaScript"
+      "title": "faefefa",
+      "slug": "faefefa",
+      "authorId": "2",
+      "category": "efaefe",
+      "createdAt": 1656428594715
     },
     {
       "id": 4,
-      "title": "Building a JavaScript Development Environment",
-      "slug": "javascript-development-environment",
-      "authorId": 1,
-      "category": "JavaScript"
+      "title": "adwdawd",
+      "slug": "adwdawd",
+      "authorId": "1",
+      "category": "awdwadwa",
+      "createdAt": 1656428610264
     },
     {
       "id": 5,
-      "title": "Building Applications with React and Redux",
-      "slug": "react-redux-react-router-es6",
-      "authorId": 1,
-      "category": "JavaScript"
+      "title": "faefaef",
+      "slug": "faefaef",
+      "authorId": "2",
+      "category": "aefaefa",
+      "createdAt": 1656428816210
     },
     {
       "id": 6,
-      "title": "Building Applications in React and Flux",
-      "slug": "react-flux-building-applications",
-      "authorId": 1,
-      "category": "JavaScript"
+      "title": "afgeafaef",
+      "slug": "afgeafaef",
+      "authorId": "2",
+      "category": "aefaefa",
+      "createdAt": 1656428876741
     }
   ],
   "authors": [
