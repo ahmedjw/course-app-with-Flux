@@ -1,10 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { deleteCourse } from "../../actions/CourseActions";
 
 export default function Course({ info }) {
-  const navigate = useNavigate();
   return (
     <tr key={info.id}>
       <td>
